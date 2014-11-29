@@ -10,15 +10,15 @@ public class News {
     private String content;
     private String imageUrl;
     private ArrayList<String> tags;
-    private int type;
+//    private int type;
 
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
+//    public int getType() {
+//        return type;
+//    }
+//
+//    public void setType(int type) {
+//        this.type = type;
+//    }
 
     public String getTittle() {
         return tittle;

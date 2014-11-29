@@ -6,6 +6,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.madgeeklabs.mglelmundo.Activities.MainActivity;
+import com.madgeeklabs.mglelmundo.Activities.MoreInfoActivity;
 import com.madgeeklabs.mglelmundo.Utils.Credentials;
 import com.madgeeklabs.mglelmundo.adapters.CategoriesAdapter;
 import com.madgeeklabs.mglelmundo.adapters.NewsAdapter;
@@ -24,7 +25,8 @@ import retrofit.RestAdapter;
 @Module(injects = {
         MainActivity.class,
         NewsAdapter.class,
-        CategoriesAdapter.class
+        CategoriesAdapter.class,
+        MoreInfoActivity.class
 },
         library = true)
 

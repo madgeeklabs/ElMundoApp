@@ -1,12 +1,55 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/drawer_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
 
+<RelativeLayout
+    android:id="@+id/content_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     <android.support.v4.view.ViewPager
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </RelativeLayout>
+
+<!-- The navigation drawer -->
+<RelativeLayout
+    android:clickable="true"
+    android:background="@color/nowfie_purple"
+    android:id="@+id/left_drawer"
+    android:layout_gravity="start"
+    android:layout_width="240dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/user_image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/alex"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/user_name"
+        android:text="\@Guillermo_1984"
+        android:layout_below="@+id/user_image"
+        style="@style/Style02"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:layout_below="@+id/user_name"
+        android:id="@+id/listView_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="@color/nowfie_gray"
+        android:dividerHeight="1dp"
+        />
+</RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

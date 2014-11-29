@@ -41,6 +41,7 @@ public class CategoriesAdapter extends PagerAdapter {
     private final TextToSpeech mTts;
     private ArrayList<String> contents;
     private LayoutInflater mInflater;
+    private String [] titles = new String [3];
     @Inject
     RestAdapter restAdapter;
     private MundoAplication app;
@@ -60,8 +61,9 @@ public class CategoriesAdapter extends PagerAdapter {
         api.getTecnolgiesNews(new Callback<List<News>>() {
             @Override
             public void success(List<News> newses, Response response) {
-                listOfNewsAdapter.add(new NewsAdapter((ArrayList<News>) newses, mContext, app));
-//                listOfNewsFeed.add((ArrayList<News>)newses);
+                NewsAdapter currentAdapter = new NewsAdapter((ArrayList<News>) newses, mContext, app);
+                listOfNewsAdapter.add(currentAdapter);
+                titles[listOfNewsAdapter.indexOf(currentAdapter)] = "TECNOLOGIA";
                 notifyDataSetChanged();
             }
 
@@ -74,8 +76,9 @@ public class CategoriesAdapter extends PagerAdapter {
         api.getBreakingNews(new Callback<List<News>>() {
             @Override
             public void success(List<News> newses, Response response) {
-                listOfNewsAdapter.add(new NewsAdapter((ArrayList<News>) newses, mContext, app));
-//                listOfNewsFeed.add((ArrayList<News>) newses);
+                NewsAdapter currentAdapter = new NewsAdapter((ArrayList<News>) newses, mContext, app);
+                listOfNewsAdapter.add(currentAdapter);
+                titles[listOfNewsAdapter.indexOf(currentAdapter)] = "ACTUALIDAD";
                 notifyDataSetChanged();
             }
 
@@ -88,8 +91,9 @@ public class CategoriesAdapter extends PagerAdapter {
         api.getSportsNews(new Callback<List<News>>() {
             @Override
             public void success(List<News> newses, Response response) {
-                listOfNewsAdapter.add(new NewsAdapter((ArrayList<News>) newses, mContext, app));
-//                listOfNewsFeed.add((ArrayList<News>) newses);
+                NewsAdapter currentAdapter = new NewsAdapter((ArrayList<News>) newses, mContext, app);
+                listOfNewsAdapter.add(currentAdapter);
+                titles[listOfNewsAdapter.indexOf(currentAdapter)] = "DEPORTES";
                 notifyDataSetChanged();
             }
 
@@ -156,18 +160,8 @@ public class CategoriesAdapter extends PagerAdapter {
         final ListView listOfNews = (ListView) v.findViewById(R.id.listView);
 
         if (listOfNewsAdapter.size() >= position) {
-//            listOfNewsAdapter.add(position, new NewsAdapter(listOfNewsFeed.get(position), mContext, app));
             listOfNews.setAdapter(listOfNewsAdapter.get(position));
         }
-
-        Button button = (Button) v.findViewById(R.id.speech);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mTts.speak(((News) listOfNewsAdapter.get(currentPage).getItem(0)).getTittle(), TextToSpeech.QUEUE_FLUSH, null, "12345");
-            }
-        });
 
         container.addView(v, 0);
         return v;
@@ -178,11 +172,29 @@ public class CategoriesAdapter extends PagerAdapter {
         container.removeView((View) object);
     }
 
+    public String getCurrentNewsTheme() {
+        return ((News) listOfNewsAdapter.get(currentPage).getItem(0)).getTags().get(0);
+    }
+
+    public void speakNews () {
+        mTts.speak(((News) listOfNewsAdapter.get(currentPage).getItem(0)).getTittle(), TextToSpeech.QUEUE_FLUSH, null, "12345");
+    }
+
+    public String getTypeOfContent (int i) {
+        return titles[i];
+    }
     public void setCurrentPage(int currentPage) {
         this.currentPage = currentPage;
     }
 
     public int getCurrentPage() {
         return currentPage;
+    }
+
+    public int getPageOfContent(String type) {
+        for (int x = 0; x <= titles.length ; x++) {
+            if (titles[x].equalsIgnoreCase(type)) return x;
+        }
+        return 1;
     }
 }

@@ -43,6 +43,8 @@ public class MoreInfoActivity extends Activity {
 
         String theme = getIntent().getStringExtra("THEME");
 
+        getActionBar().setTitle("Mas sobre " + theme);
+
         api.getRelatedNews(theme, new Callback<List<News>>() {
             @Override
             public void success(List<News> newses, Response response) {
