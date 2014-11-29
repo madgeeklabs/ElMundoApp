@@ -5,9 +5,11 @@ import android.content.Context;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.madgeeklabs.mglelmundo.Activities.CastActivity;
 import com.madgeeklabs.mglelmundo.Activities.MainActivity;
 import com.madgeeklabs.mglelmundo.Activities.MoreInfoActivity;
 import com.madgeeklabs.mglelmundo.Utils.Credentials;
+import com.madgeeklabs.mglelmundo.adapters.CastNewsAdapter;
 import com.madgeeklabs.mglelmundo.adapters.CategoriesAdapter;
 import com.madgeeklabs.mglelmundo.adapters.NewsAdapter;
 import com.madgeeklabs.mglelmundo.api.MundoApi;
@@ -26,7 +28,9 @@ import retrofit.RestAdapter;
         MainActivity.class,
         NewsAdapter.class,
         CategoriesAdapter.class,
-        MoreInfoActivity.class
+        MoreInfoActivity.class,
+        CastActivity.class,
+        CastNewsAdapter.class
 },
         library = true)
 

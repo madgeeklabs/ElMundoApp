@@ -2,4 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
     <item android:id="@+id/action_read" android:title="Read me" android:orderInCategory="1"
         android:icon="@drawable/microheadphones" android:showAsAction="always"/>
+    <item android:id="@+id/action_cast" android:title="Read me" android:orderInCategory="2"
+        android:icon="@drawable/chromecast" android:showAsAction="always"/>
 </menu>

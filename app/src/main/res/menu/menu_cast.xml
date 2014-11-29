@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.madgeeklabs.mglelmundo.Activities.CastActivity">
+    <item android:id="@+id/action_read" android:title="Read me" android:orderInCategory="1"
+        android:icon="@drawable/microheadphones" android:showAsAction="always"/>
+</menu>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/news_image"
+            android:layout_width="210dp"
+            android:layout_height="260dp"
+            android:scaleType="centerCrop"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/nowfie_whitee"
+            android:paddingLeft="10dp"
+            android:layout_toRightOf="@+id/news_image">
+            <TextView
+                style="@style/section"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/nowfie_light_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Polaroid"
+                android:id="@+id/news_title"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                style="@style/sub_body"
+                android:ellipsize="end"
+                android:maxLength="450"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/nowfie_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="ajsdkfhasdkfjasdfasjkdfhaskjdfhaskjdfhaskljdfhaskljdfhasdkljfhasdfkjas"
+                android:id="@+id/news_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:background="@drawable/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+    <View
+        android:background="@color/nowfie_lighter_gray"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+
+</LinearLayout>

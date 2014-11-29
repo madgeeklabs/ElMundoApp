@@ -1,6 +1,7 @@
 package com.madgeeklabs.mglelmundo.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -75,7 +76,9 @@ public class MoreInfoActivity extends Activity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_feed) {
+            Intent feed = new Intent(MoreInfoActivity.this, TwitterFeed.class);
+            startActivity(feed);
             return true;
         }
 

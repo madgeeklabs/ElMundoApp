@@ -42,12 +42,12 @@ public class CategoriesAdapter extends PagerAdapter {
     private ArrayList<String> contents;
     private LayoutInflater mInflater;
     private String [] titles = new String [3];
-    @Inject
-    RestAdapter restAdapter;
     private MundoAplication app;
     private Context mContext;
     private int currentPage;
     private ArrayList<NewsAdapter> listOfNewsAdapter = new ArrayList<>();
+    @Inject
+    RestAdapter restAdapter;
 
     public CategoriesAdapter (final ArrayList<String> categories, final Context mContext, final MundoAplication app) {
         this.contents = categories;

@@ -10,4 +10,5 @@
         android:dividerHeight="0dp"
         android:divider="@null"
         android:id="@+id/more_info_activity" />
+
 </RelativeLayout>

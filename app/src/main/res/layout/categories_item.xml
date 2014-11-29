@@ -6,7 +6,7 @@
 
     <ImageView
         android:layout_gravity="center_vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:id="@+id/category_image" />

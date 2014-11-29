@@ -15,5 +15,7 @@
     <string name="origines">Origenes:</string>
     <string name="Ajustes">Ajustes</string>
     <string name="LogOut">Log Out</string>
+    <string name="title_activity_cast">CastActivity</string>
+    <string name="title_activity_twitter_feed">TwitterFeed</string>
 
 </resources>

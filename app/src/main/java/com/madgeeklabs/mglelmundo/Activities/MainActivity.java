@@ -102,12 +102,12 @@ public class MainActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
-        options.add(new Category(getResources().getString(R.string.origines), R.drawable.ic_launcher));
-        options.add(new Category(getResources().getString(R.string.Wikipedia), R.drawable.ic_launcher));
-        options.add(new Category(getResources().getString(R.string.Memes), R.drawable.ic_launcher));
-        options.add(new Category(getResources().getString(R.string.Blogs), R.drawable.ic_launcher));
-        options.add(new Category(getResources().getString(R.string.Ajustes), R.drawable.ic_launcher));
-        options.add(new Category(getResources().getString(R.string.LogOut), R.drawable.ic_launcher));
+        options.add(new Category(getResources().getString(R.string.origines), R.drawable.sources1));
+        options.add(new Category(getResources().getString(R.string.Wikipedia), R.drawable.wikipedia));
+        options.add(new Category(getResources().getString(R.string.Memes), R.drawable.meme));
+        options.add(new Category(getResources().getString(R.string.Blogs), R.drawable.blog));
+        options.add(new Category(getResources().getString(R.string.Ajustes), R.drawable.settings));
+        options.add(new Category(getResources().getString(R.string.LogOut), R.drawable.logout));
 
         MenuAdapter menuAdapter = new MenuAdapter(MainActivity.this, options);
 
@@ -171,6 +171,11 @@ public class MainActivity extends Activity {
 //            catAdapter.speakNews();
             promptSpeechInput();
             return true;
+        } else if (id == R.id.action_cast){
+            Intent castIntent = new Intent(MainActivity.this, CastActivity.class);
+            castIntent.putExtra("CONTENT", mTitle);
+            startActivity(castIntent);
+
         }
 
         return super.onOptionsItemSelected(item);

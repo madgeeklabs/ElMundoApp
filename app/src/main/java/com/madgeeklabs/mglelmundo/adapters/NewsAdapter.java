@@ -65,6 +65,7 @@ public class NewsAdapter extends BaseAdapter{
             holder.image = (NetworkImageView) convertView.findViewById(R.id.news_image);
             holder.moreInfo = (TextView) convertView.findViewById(R.id.more_info);
             holder.close = (ImageButton) convertView.findViewById(R.id.delete_current);
+            holder.share = (TextView) convertView.findViewById(R.id.share_current_nowfie);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -73,6 +74,17 @@ public class NewsAdapter extends BaseAdapter{
         holder.title.setText(news.get(position).getTittle());
         holder.image.setImageUrl(news.get(position).getImageUrl(), mLoader);
         holder.content.setText(news.get(position).getContent());
+
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, news.get(position).getTittle() + " \n " + news.get(position).getNewsUrl());
+                sendIntent.setType("text/plain");
+                mContext.startActivity(Intent.createChooser(sendIntent, "Compartir con:"));
+            }
+        });
 
         holder.close.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -105,6 +117,7 @@ public class NewsAdapter extends BaseAdapter{
         private NetworkImageView image;
         private TextView moreInfo;
         private ImageButton close;
+        private TextView share;
     }
 
 }

@@ -25,6 +25,15 @@
             android:name="com.madgeeklabs.mglelmundo.Activities.MoreInfoActivity"
             android:label="@string/title_activity_more_info" >
         </activity>
+        <activity
+            android:name="com.madgeeklabs.mglelmundo.Activities.CastActivity"
+            android:label="@string/title_activity_cast"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.madgeeklabs.mglelmundo.Activities.TwitterFeed"
+            android:label="@string/title_activity_twitter_feed" >
+        </activity>
     </application>
 
 </manifest>
